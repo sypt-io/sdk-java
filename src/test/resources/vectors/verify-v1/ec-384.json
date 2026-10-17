@@ -1,0 +1,19 @@
+{
+  "profile" : "sypt-v1",
+  "description" : "Signature of a digest by a EC_384 key material (SHA384withECDSA), as returned by POST /{domain}/sign",
+  "keyType" : "EC_384",
+  "signatureAlgorithm" : "SHA384withECDSA",
+  "verificationCertificate" : "MIIBdzCB/qADAgECAggrwqx/F2OQzjAKBggqhkjOPQQDAzASMRAwDgYDVQQDEwdzeXB0LmlvMB4XDTI2MDcyODE1MTI1MVoXDTI4MDcyNzE1MTI1MVowEjEQMA4GA1UEAxMHc3lwdC5pbzB2MBAGByqGSM49AgEGBSuBBAAiA2IABA6AS6czxR4Kd8hWyyqchXJzVOGo5H7y3CLjTHgaDELhTuQJEte0TPdwSAddTdWMkBpdQAoMTBpTZhXGxBV4eUWymyJVVDcVLgAWh0qKxGjTopK5kfv9eFZkSYf6gtw1P6MhMB8wHQYDVR0OBBYEFKsvvESUhrpdJMH7g8Ope1yV9utyMAoGCCqGSM49BAMDA2gAMGUCMQCxzBcuEJGeuDD8h7Mk1epakH0g0uStlGYiy7TE/BZ+vBdiQ2OHBTRsV3AlSmcac2cCMFfcwJpz7ArXytX+0wRWH3fe7VBCHRtsMf/iNGpV4gq3Z05NMsvSAbMvolBBrgQMDg==",
+  "encryptionCertificate" : "MIIBeDCB/6ADAgECAgkAxJQLE5sY+pMwCgYIKoZIzj0EAwMwEjEQMA4GA1UEAxMHc3lwdC5pbzAeFw0yNjA3MjgxNTEyNTZaFw0yODA3MjcxNTEyNTZaMBIxEDAOBgNVBAMTB3N5cHQuaW8wdjAQBgcqhkjOPQIBBgUrgQQAIgNiAAS5gdyJGGfFAUTOEKMLf/QecQQvEebhQCnAH1fWCK9jjlcRmplv6fZm4wzgKcZVNgwzOzH3PBFf06a0QHHUNWqUKhTjqvqzGYIupAu1Mrs7nb05RhsnFbC6o2KTlvHceqKjITAfMB0GA1UdDgQWBBQ1JdGVUaEF20RDdfrmHevalbFifDAKBggqhkjOPQQDAwNoADBlAjAyA0U3MlPDbZUDSnk29UquMCyzH8BFYLMeyqT+6kQTENGfHdVpp8lFt+yHlU2s9ewCMQD9ulMoXO0h6giI9aDEUuTu8N4O419Rk/NnftMiqXthtB78QgYXQjOiB7OSRjJ5sK4=",
+  "cases" : [ {
+    "description" : "signature of the digest",
+    "digest" : "LPJNul+wow4m6DsqxbninhsWHlwfp0JecwQzYpOLmCQ=",
+    "signature" : "MGYCMQCb0w+4tXX1Sv8bW0bW6KpRf1mvSh8yw4/Dam6tkXMlNVl8/o7BF6IE1Dk7chPGbEkCMQCdYoszknvDqe1pqhDET3qYdY6sSDRhdgrolFXPyIEOeeBAc/kLSXj+ntfuNUuLaN8=",
+    "valid" : true
+  }, {
+    "description" : "same signature, other digest",
+    "digest" : "2SmKENGwc1g33EvYXaxkGw887yekfl1TpU8vP1svz/o=",
+    "signature" : "MGYCMQCb0w+4tXX1Sv8bW0bW6KpRf1mvSh8yw4/Dam6tkXMlNVl8/o7BF6IE1Dk7chPGbEkCMQCdYoszknvDqe1pqhDET3qYdY6sSDRhdgrolFXPyIEOeeBAc/kLSXj+ntfuNUuLaN8=",
+    "valid" : false
+  } ]
+}

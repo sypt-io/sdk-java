@@ -1,0 +1,7 @@
+{
+  "resources": [
+    {
+      "glob": "META-INF/io.sypt/sypt-sdk.properties"
+    }
+  ]
+}

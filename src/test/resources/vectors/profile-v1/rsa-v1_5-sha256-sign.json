@@ -1,0 +1,25 @@
+{
+  "profile" : "sypt-v1",
+  "description" : "RSA PKCS#1 v1.5 / SHA-256, POST /sign",
+  "alg" : "rsa-v1_5-sha256",
+  "keyId" : "sypt_kc_test_rsa-2048",
+  "privateKey" : "keys/rsa-2048.pem",
+  "publicKey" : "keys/rsa-2048.pub.pem",
+  "method" : "POST",
+  "url" : "https://api.sypt.io/v1/example.com/sign",
+  "body" : "{\"keyId\":\"sypt_km_test\",\"digest\":\"LPJNul+wow4m6DsqxbninhsWHlwfp0JecwQzYpOLmCQ=\",\"context\":\"invoice-42\"}",
+  "created" : 1792137600,
+  "nonce" : "c0ffee00-1234-4abc-8def-0123456789ab",
+  "expected" : {
+    "signatureBase" : "\"@method\": POST\n\"@path\": /v1/example.com/sign\n\"date\": Fri, 16 Oct 2026 08:00:00 GMT\n\"content-digest\": sha-256=:i3C701FH9jI3Eo6p5H5LGKZFFAD84w+zvNPPt9ma9bw=:\n\"@signature-params\": (\"@method\" \"@path\" \"date\" \"content-digest\");alg=\"rsa-v1_5-sha256\";created=1792137600;nonce=\"c0ffee00-1234-4abc-8def-0123456789ab\";keyid=\"sypt_kc_test_rsa-2048\"",
+    "headers" : {
+      "Date" : "Fri, 16 Oct 2026 08:00:00 GMT",
+      "Content-Digest" : "sha-256=:i3C701FH9jI3Eo6p5H5LGKZFFAD84w+zvNPPt9ma9bw=:",
+      "Content-Type" : "application/json",
+      "Want-Content-Digest" : "sha-256=10",
+      "Signature-Input" : "sig1=(\"@method\" \"@path\" \"date\" \"content-digest\");alg=\"rsa-v1_5-sha256\";created=1792137600;nonce=\"c0ffee00-1234-4abc-8def-0123456789ab\";keyid=\"sypt_kc_test_rsa-2048\"",
+      "Signature" : "sig1=:teQ66fr2V8n2jfpF6fnpWEuOFQkFVrUfqAUzGfuAEr7fYlrhBiIUf2SRVwhACfe1ACFmk9R/RM3B9hDhNP/XfaC3gA59ZD9KWdpLC4jq55sTfsh287kbC66vHr2PQ6VB9RHeCRsr5dxXvkgXFtNxoUmuK1zgWMpGZapLTgTl4xNHmUV9HYuYZ0G1nvUMitWct32ZuUpPQuBehmdHgAi6oVa/No+KCtWQPxokvReOFRzn8B19ZBPQaPV/TGIZxfPicnLlelfWUkty5b5po/JE3u/QTTeoyaMCHCDQUTnNVf8UH9juUaidAzyor7Z/FyB5xSlk90zWlve49G07YAhf9A==:"
+    },
+    "signatureIsDeterministic" : true
+  }
+}

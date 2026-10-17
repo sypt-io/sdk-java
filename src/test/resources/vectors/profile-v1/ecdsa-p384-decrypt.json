@@ -1,0 +1,25 @@
+{
+  "profile" : "sypt-v1",
+  "description" : "ECDSA P-384 / SHA-384, POST /decrypt",
+  "alg" : "ecdsa-p384-sha384",
+  "keyId" : "sypt_kc_test_ecdsa-p384",
+  "privateKey" : "keys/ecdsa-p384.pem",
+  "publicKey" : "keys/ecdsa-p384.pub.pem",
+  "method" : "POST",
+  "url" : "https://api.sypt.io/v1/sub.example.com/decrypt",
+  "body" : "{\"keyId\":\"sypt_km_test\",\"digest\":\"LPJNul+wow4m6DsqxbninhsWHlwfp0JecwQzYpOLmCQ=\",\"context\":\"\"}",
+  "created" : 1792137600,
+  "nonce" : "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+  "expected" : {
+    "signatureBase" : "\"@method\": POST\n\"@path\": /v1/sub.example.com/decrypt\n\"date\": Fri, 16 Oct 2026 08:00:00 GMT\n\"content-digest\": sha-256=:wFJIs3bW1/lbIMIhkKeI6UGyEmWzX0xPRTyFI6XiPaI=:\n\"@signature-params\": (\"@method\" \"@path\" \"date\" \"content-digest\");alg=\"ecdsa-p384-sha384\";created=1792137600;nonce=\"a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d\";keyid=\"sypt_kc_test_ecdsa-p384\"",
+    "headers" : {
+      "Date" : "Fri, 16 Oct 2026 08:00:00 GMT",
+      "Content-Digest" : "sha-256=:wFJIs3bW1/lbIMIhkKeI6UGyEmWzX0xPRTyFI6XiPaI=:",
+      "Content-Type" : "application/json",
+      "Want-Content-Digest" : "sha-256=10",
+      "Signature-Input" : "sig1=(\"@method\" \"@path\" \"date\" \"content-digest\");alg=\"ecdsa-p384-sha384\";created=1792137600;nonce=\"a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d\";keyid=\"sypt_kc_test_ecdsa-p384\"",
+      "Signature" : "sig1=:uGV0Nf3E4VrnHH+qXseWrK35nmrroXNfVV3dYXUc4os68734KYyIfqn7hXV9JfioCxdbujhsG+AZP+P+JGU51aZJKJk9xGQ0cagn4ybVDZGsxVjwcSPBGtlhMAQAIB0q:"
+    },
+    "signatureIsDeterministic" : false
+  }
+}

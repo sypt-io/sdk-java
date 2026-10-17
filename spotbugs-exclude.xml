@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Findings accepted by design. Each entry says why. -->
+<FindBugsFilter>
+
+	<!-- The keystore path is chosen by the application using the SDK (or by the CLI user): reading it is the purpose of the class -->
+	<Match>
+		<Class name="io.sypt.sdk.credentials.SyptSignatureParametersKeystore" />
+		<Bug pattern="PATH_TRAVERSAL_IN" />
+	</Match>
+
+	<!-- X.509 certificates are immutable once parsed -->
+	<Match>
+		<Class name="io.sypt.sdk.keys.SyptKeyMaterialResponse" />
+		<Bug pattern="EI_EXPOSE_REP,EI_EXPOSE_REP2" />
+	</Match>
+
+	<!-- Case-insensitive comparisons of algorithm names (given by the developer) and of the OS name (User-Agent):
+	     no access decision depends on them -->
+	<Match>
+		<Or>
+			<Class name="io.sypt.sdk.signature.HttpSignatureAlgorithm" />
+			<Class name="io.sypt.sdk.SyptClient" />
+		</Or>
+		<Bug pattern="IMPROPER_UNICODE" />
+	</Match>
+
+	<!-- The compact constructor stores an unmodifiable copy of the map -->
+	<Match>
+		<Class name="io.sypt.sdk.request.SyptRequest" />
+		<Bug pattern="EI_EXPOSE_REP" />
+	</Match>
+
+	<!-- The signature base is only exposed to check the test vectors; it is not reused once the request is signed -->
+	<Match>
+		<Class name="io.sypt.sdk.signature.HttpSignatureBuilder$PreparedSignature" />
+		<Bug pattern="EI_EXPOSE_REP,EI_EXPOSE_REP2" />
+	</Match>
+
+</FindBugsFilter>

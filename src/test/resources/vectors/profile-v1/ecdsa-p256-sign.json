@@ -1,0 +1,25 @@
+{
+  "profile" : "sypt-v1",
+  "description" : "ECDSA P-256 / SHA-256, POST /sign",
+  "alg" : "ecdsa-p256-sha256",
+  "keyId" : "sypt_kc_test_ecdsa-p256",
+  "privateKey" : "keys/ecdsa-p256.pem",
+  "publicKey" : "keys/ecdsa-p256.pub.pem",
+  "method" : "POST",
+  "url" : "https://api.sypt.io/v1/example.com/sign",
+  "body" : "{\"keyId\":\"sypt_km_test\",\"digest\":\"LPJNul+wow4m6DsqxbninhsWHlwfp0JecwQzYpOLmCQ=\",\"context\":\"invoice-42\"}",
+  "created" : 1792137600,
+  "nonce" : "0e1d2c3b-4a59-4687-b6c5-d4e3f2a1b0c9",
+  "expected" : {
+    "signatureBase" : "\"@method\": POST\n\"@path\": /v1/example.com/sign\n\"date\": Fri, 16 Oct 2026 08:00:00 GMT\n\"content-digest\": sha-256=:i3C701FH9jI3Eo6p5H5LGKZFFAD84w+zvNPPt9ma9bw=:\n\"@signature-params\": (\"@method\" \"@path\" \"date\" \"content-digest\");alg=\"ecdsa-p256-sha256\";created=1792137600;nonce=\"0e1d2c3b-4a59-4687-b6c5-d4e3f2a1b0c9\";keyid=\"sypt_kc_test_ecdsa-p256\"",
+    "headers" : {
+      "Date" : "Fri, 16 Oct 2026 08:00:00 GMT",
+      "Content-Digest" : "sha-256=:i3C701FH9jI3Eo6p5H5LGKZFFAD84w+zvNPPt9ma9bw=:",
+      "Content-Type" : "application/json",
+      "Want-Content-Digest" : "sha-256=10",
+      "Signature-Input" : "sig1=(\"@method\" \"@path\" \"date\" \"content-digest\");alg=\"ecdsa-p256-sha256\";created=1792137600;nonce=\"0e1d2c3b-4a59-4687-b6c5-d4e3f2a1b0c9\";keyid=\"sypt_kc_test_ecdsa-p256\"",
+      "Signature" : "sig1=:od4HBSS65Qw0w+sBSUvNFMUXMMgrMiD+jT6VZ4gL6a+aJFA0G1BQhm3047MrNP3jy78799xSBxXyt39wQ3Ypbw==:"
+    },
+    "signatureIsDeterministic" : false
+  }
+}

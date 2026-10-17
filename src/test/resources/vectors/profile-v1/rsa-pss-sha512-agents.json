@@ -1,0 +1,25 @@
+{
+  "profile" : "sypt-v1",
+  "description" : "RSA-PSS / SHA-512, POST /agents",
+  "alg" : "rsa-pss-sha512",
+  "keyId" : "sypt_kc_test_rsa-2048",
+  "privateKey" : "keys/rsa-2048.pem",
+  "publicKey" : "keys/rsa-2048.pub.pem",
+  "method" : "POST",
+  "url" : "https://api.sypt.io/v1/example.com/agents",
+  "body" : "{\"name\":\"billing-bot\",\"context\":\"ligne 1\\nligne 2 \\\"quote\\\" é\"}",
+  "created" : 1792137600,
+  "nonce" : "5d4c3b2a-1908-4f7e-8d6c-5b4a39281706",
+  "expected" : {
+    "signatureBase" : "\"@method\": POST\n\"@path\": /v1/example.com/agents\n\"date\": Fri, 16 Oct 2026 08:00:00 GMT\n\"content-digest\": sha-256=:1jDmlw6XQ+FVk8CPHFrSIydAkwlrQwgWeFUo9Zy9/18=:\n\"@signature-params\": (\"@method\" \"@path\" \"date\" \"content-digest\");alg=\"rsa-pss-sha512\";created=1792137600;nonce=\"5d4c3b2a-1908-4f7e-8d6c-5b4a39281706\";keyid=\"sypt_kc_test_rsa-2048\"",
+    "headers" : {
+      "Date" : "Fri, 16 Oct 2026 08:00:00 GMT",
+      "Content-Digest" : "sha-256=:1jDmlw6XQ+FVk8CPHFrSIydAkwlrQwgWeFUo9Zy9/18=:",
+      "Content-Type" : "application/json",
+      "Want-Content-Digest" : "sha-256=10",
+      "Signature-Input" : "sig1=(\"@method\" \"@path\" \"date\" \"content-digest\");alg=\"rsa-pss-sha512\";created=1792137600;nonce=\"5d4c3b2a-1908-4f7e-8d6c-5b4a39281706\";keyid=\"sypt_kc_test_rsa-2048\"",
+      "Signature" : "sig1=:Mfaze2FqcYlyRqNrA4UT8Hh5G8e9CizDrBMaoW7dnCtZzFhZuqQI0S2HKMV71ibbvYCrc5tKLbIiQbNTPd3cLZR47A7QG0Kcw+MnuTh0lkcFS3fAvB2/mCegA/0m3365/lsEz2n3xn+MtvkJUT8dhVr6UVWc09YiHtLntTAPh28AH0VYaX17n5HS5vg1r+CulApxk/EXpZltxqDuzQV1iRXPXifbOaAGsos34McEARd/tNGvJNtnDCiwaKHZqf96MWyOoJrdrrN/nAJP56bShSbfenNh8XTvTGO4jB5FzSnA4W3G8SexgvaYidOqndiOlLW8Q6ey5m2U/hGuyhLtuA==:"
+    },
+    "signatureIsDeterministic" : false
+  }
+}

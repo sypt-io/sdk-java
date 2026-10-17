@@ -1,0 +1,25 @@
+{
+  "profile" : "sypt-v1",
+  "description" : "Ed25519 (RFC 9421 B.1.4 test key), POST /sign",
+  "alg" : "ed25519",
+  "keyId" : "sypt_kc_test_ed25519",
+  "privateKey" : "keys/ed25519.pem",
+  "publicKey" : "keys/ed25519.pub.pem",
+  "method" : "POST",
+  "url" : "https://api.sypt.io/v1/example.com/sign",
+  "body" : "{\"keyId\":\"sypt_km_test\",\"digest\":\"LPJNul+wow4m6DsqxbninhsWHlwfp0JecwQzYpOLmCQ=\",\"context\":\"invoice-42\"}",
+  "created" : 1792137600,
+  "nonce" : "7f3c2a1e-0b4d-4e6f-9a8b-1c2d3e4f5a6b",
+  "expected" : {
+    "signatureBase" : "\"@method\": POST\n\"@path\": /v1/example.com/sign\n\"date\": Fri, 16 Oct 2026 08:00:00 GMT\n\"content-digest\": sha-256=:i3C701FH9jI3Eo6p5H5LGKZFFAD84w+zvNPPt9ma9bw=:\n\"@signature-params\": (\"@method\" \"@path\" \"date\" \"content-digest\");alg=\"ed25519\";created=1792137600;nonce=\"7f3c2a1e-0b4d-4e6f-9a8b-1c2d3e4f5a6b\";keyid=\"sypt_kc_test_ed25519\"",
+    "headers" : {
+      "Date" : "Fri, 16 Oct 2026 08:00:00 GMT",
+      "Content-Digest" : "sha-256=:i3C701FH9jI3Eo6p5H5LGKZFFAD84w+zvNPPt9ma9bw=:",
+      "Content-Type" : "application/json",
+      "Want-Content-Digest" : "sha-256=10",
+      "Signature-Input" : "sig1=(\"@method\" \"@path\" \"date\" \"content-digest\");alg=\"ed25519\";created=1792137600;nonce=\"7f3c2a1e-0b4d-4e6f-9a8b-1c2d3e4f5a6b\";keyid=\"sypt_kc_test_ed25519\"",
+      "Signature" : "sig1=:AnMAcmKvqrBRS4hv1LgQfaSwv3KGHt0lWLdBo8UFGOwBiYTEoo6jSrNqawgl8aJPYrWfD7QDB2gHqsNb5uZ3Dg==:"
+    },
+    "signatureIsDeterministic" : true
+  }
+}
